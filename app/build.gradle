@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.achilleasoft.android_lesson1'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.achilleasoft.android_lesson1"
         minSdk 29
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
