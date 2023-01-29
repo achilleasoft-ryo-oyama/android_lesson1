@@ -3,15 +3,25 @@ package com.achilleasoft.android_lesson1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.AlarmClock.EXTRA_MESSAGE
+import android.view.View
 import android.widget.Button
+import android.widget.EditText
+import androidx.core.content.ContextCompat.startActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btnstart :Button=findViewById(R.id.button)
-        btnstart.setOnClickListener{
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
-        }    }
+    }
+    fun sendMessage(view: View) {
+        val intent: Intent = Intent(
+            this@MainActivity,
+            SecondActivity::class.java
+        )
+        val editText: EditText = findViewById(R.id.editTextTextPersonName) as EditText
+        val message: String = editText.text.toString()
+        intent.putExtra("text", message)
+        startActivity(intent)
+    }
 }
