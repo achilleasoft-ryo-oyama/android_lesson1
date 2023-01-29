@@ -1,6 +1,7 @@
 package com.achilleasoft.android_lesson1
 
 import android.content.Intent
+import android.os.Build.VERSION_CODES.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
@@ -20,8 +21,9 @@ class MainActivity : AppCompatActivity() {
             SecondActivity::class.java
         )
         val editText: EditText = findViewById(R.id.editTextTextPersonName) as EditText
-        val message: String = editText.text.toString()
-        intent.putExtra("text", message)
+        val message: String? = editText.text.toString()
+        val key:String ="KEY"
+        intent.putExtra(key, message)
         startActivity(intent)
     }
 }

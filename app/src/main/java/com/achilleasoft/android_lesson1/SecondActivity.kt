@@ -12,7 +12,8 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         val intent: Intent = getIntent()
-        val message: String? = intent.getStringExtra(MainActivity()."text")
+        val key: String= "KEY"
+        val message: String? = intent.getStringExtra(key)
         val textView: TextView = findViewById(R.id.textView)
         textView.setText(message)
         }
